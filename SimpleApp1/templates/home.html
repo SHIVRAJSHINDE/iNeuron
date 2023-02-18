@@ -1,0 +1,35 @@
+{% extends 'layout.html' %}
+
+{% block body %}
+
+<div class="container mt-5">
+    <form action="/" method="POST">
+
+    <div class="form-group">
+        <label for="nameInput">Fasting Sugar</label>
+        <input type="text" class="form-control" name="FS" id="nameInput" placeholder="Enter your First Name">
+      </div>
+
+      <div class="form-group">
+        <label for="nameInput">Frequest Urnination</label>
+        <select name = "FU" >
+            <option value="1">YES</option>
+            <option value="0">NO</option>
+        </select>
+      </div>
+
+      <button type="submit" class="btn btn-primary">Post</button>
+      
+      {%if data :%}
+          <h3 style = "color:{{data[1]}}" >  
+            {{data[0]}}
+          </h3>
+      {% endif %}
+
+
+    </form>
+  </div>
+
+
+
+{% endblock %}
